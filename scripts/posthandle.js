@@ -51,4 +51,17 @@ app.post("/login", jsonParser, function(request, response) {
 	});
 });
 
+app.post("/purge", function(request, response) { 
+	MongoClient.connect(url, function(err, db) {
+		if (err) throw err;
+		console.log("Connected");
+		var dbo = db.db("test");
+		dbo.collection("members").drop(function(err, deleteOkay) {
+			if (err) throw err;
+			if (deleteOkay) console.log("Member collection purges");
+			db.close();
+		});
+	});
+});
+
 app.listen(3000);
