@@ -2,19 +2,21 @@
 <html>
 	<head>
 		<title>New Member</title>
-		<script type="text/javascript" src="../scripts/newmember/js">
-		</script>
 	</head>
 	<body>
-		<a href="index.html">Home Page</a>
+		<a href="../index.html">Home Page</a>
 		<H1>New Senior Center Member</H1>
-		<form id='new-member-form'>
+		<form id='new-member-form' action-"/node/adduser" method="POST">
 			<fieldset>
 				<legend>Personal Information:</legend>
 				*First name:<br>
 				<input type="text" name="firstname" required><br>
 				*Last name:<br>
-				<input type="text" name="lastname" required>
+				<input type="text" name="lastname" required><br>
+				Address Line 1<br>
+				<input type="text" name="line1"><br>
+				Postal Code<br>
+				<input type="text" name="zip"><br>
 			</fieldset>
 			<br>
 			<input type="submit" value="Submit">
