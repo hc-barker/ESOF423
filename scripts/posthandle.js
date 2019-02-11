@@ -30,4 +30,25 @@ app.post("/adduser", function(request, response){
 	});
 });
 
+app.post("/login", jsonParser, function(request, response) {
+	if(!request.body) return response.sendStatus(400);
+	console.log(request.body);
+	MongoClient.connect(url, function(err, db){
+		if (err) throw err;
+		console.log("Connected");
+		var dbo = db.db("test");
+		dbo.collection("users").findOne(request.body, function(err, result) {
+			if (err) throw err;
+			console.log(result);
+			if(result != null){
+				response.sent("Logged in");
+			}
+			else {
+				response.sent("Get outta here!");
+			}
+			db.close();
+		});
+	});
+});
+
 app.listen(3000);
