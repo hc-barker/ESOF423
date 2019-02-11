@@ -14,3 +14,5 @@ app.use(bodyParser.urlEncoded({extended: true}));
 app.get("/", function(request, response){
 	console.log("gotten");
 });
+
+app.listen(3000);
