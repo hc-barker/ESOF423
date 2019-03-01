@@ -26,4 +26,12 @@ Volunteers can ckech people in for meals and activities, print forms, update bas
 Members can register themselves with the center and add activities/meals.
 
 # Installation
-For the zero feature release, all that is needed is to clone the repository to a server with apache and mongodb, then use the provided html pages as the index page of your site. This will be updated as more configuration is required in future sprints.
+For the zero feature release, all that is needed is to clone the repository to a server with apache and mongodb, then use the provided html pages as the index page of your site. This will be updated as more configuration is required in future sprints. 
+
+sudo apt install mongod
+
+systemctl start mongod.service
+
+npm install
+
+pm2 posthandler.js
