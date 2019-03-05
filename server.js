@@ -26,9 +26,5 @@ app.get('/about', function(req, res){
 	res.render('pages/about');
 });
 
-app.get('/members/create', function(req, res){
-	res.render('pages/create_member');
-});
-
 app.listen(3000);
 console.log("Server running on port 3000");

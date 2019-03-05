@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+
+<header>
+	<% include ../partials/header.ejs %>
+</header>
+
+<main>
+	<ul class="members">
+		<% for(var i=0; i<members.length; i++) {%>
+		<li class="member">
+			<span><%= members[i].firstname %></span>
+			<span><%= members[i].lastname %></span>
+			<span><%= members[i].birthdate %></span>
+			<span><%= members[i].activities %></span>
+		</li>
+		<% } %>
+	</ul>
+</main>
+
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>
+
+</body>
+</html>
