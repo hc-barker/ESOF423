@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+
+<header>
+	<% include ../partials/header.ejs %>
+</header>
+
+<main>
+<div class='container mt-3'>
+	<h1>New User</h1>
+	<form id='new-user-form' action='/users/create' method='POST'>
+		<div class='form-group'>
+			<input type='text' class='form-control' placeholder='Username' name='username' required><br>
+			<input type='password' class='form-control' placeholder='Password' name='password' required><br>
+		</div>
+		<input type='submit' class='btn btn-primary' value='Submit'>
+	</form>
+</div>
+</main>
+
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>
+
+</body>
+</html>

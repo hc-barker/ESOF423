@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const member = require('./routes/member.route');
+const user = require('./routes/user.route');
 const app = express();
 
 const mongoose = require('mongoose');
@@ -15,6 +16,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/members', member);
+app.use('/users', user);
 
 app.set('view engine', 'ejs');
 
