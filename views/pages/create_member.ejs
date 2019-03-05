@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+
+<header>
+	<%include ../partials/header.ejs %>
+</header>
+
+<main>
+	<h1>New Senior Center Member</h1>
+	<form id='new-member-form' action='/members/create' method='POST'>
+		<fieldset>
+			<legend>Personal Information:</legend>
+			*First name:<br>
+			<input type="text" name="firstname" required><br>
+			*Last name:<br>
+			<input type="test" name="lastname" required><br>
+			*Birth date:<br>
+			<input type="date" name="birthdate" required><br>
+		</fieldset>
+		<fieldset>
+			<legend>Senior Center Information</legend>
+			<fieldset>
+				<legend>Activity Enrollment</legend>
+				<input type="checkbox" name="activity" value="BINGO">BINGO</option>
+				<input type="checkbex" name="activity" value="Card Games">Card Games</option>
+				<input type="checkbox" name="activity" value="Needleairs">Needleairs</option>
+				<input type="checkbox" name="activity" value="Birthday celebration">Birthday celebration</option>
+			</fieldset>
+		</fieldset>
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+</main>
+
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>
+
+</body>
+
+</html>
