@@ -47,9 +47,18 @@ exports.member_update_page = function(req, res){
 };
 
 exports.member_update = function(req, res){
-	Member.findByIdAndUpdate(req.params.id, {$set: req.body}, function(err, member) {
+	Member.findOneAndUpdate({_id:req.params.id}, {$set: req.body}, function(err, member) {
 		if(err) throw err;
 		console.log("member updated");
+		res.render('../views/pages/index.ejs');
+	});
+};
+
+exports.member_delete = function(req, res){
+	console.log(req.params.id);
+	Member.findOneAndDelete({_id:req.params.id}, function(err) {	
+		if(err) throw err;
+		console.log("Member deleted");
 		res.render('../views/pages/index.ejs');
 	});
 };

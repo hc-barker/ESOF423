@@ -9,4 +9,6 @@ router.post('/create', user_controller.user_create);
 
 router.get('/list', user_controller.list_users);
 
+router.get('/login', user_controller.login_page);
+
 module.exports = router;

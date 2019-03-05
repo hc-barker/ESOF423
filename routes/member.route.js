@@ -15,4 +15,6 @@ router.get('/update/:id', member_controller.member_update_page);
 
 router.post('/update/:id', member_controller.member_update);
 
+router.post('/delete/:id', member_controller.member_delete);
+
 module.exports = router;

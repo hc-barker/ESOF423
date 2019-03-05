@@ -43,3 +43,7 @@ exports.list_users = function(req, res) {
 		res.render('../views/pages/list_user.ejs', {users: result});
 	});
 };
+
+exports.login_page = function(req, res){
+	res.render('../views/pages/login.ejs');
+};
