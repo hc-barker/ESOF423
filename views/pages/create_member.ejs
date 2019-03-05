@@ -8,17 +8,22 @@
 </header>
 
 <main>
+<div class='container mt-3'>
 	<h1>New Senior Center Member</h1>
 	<form id='new-member-form' action='/members/create' method='POST'>
-		<fieldset>
-			<legend>Personal Information:</legend>
-			*First name:<br>
-			<input type="text" name="firstname" required><br>
-			*Last name:<br>
-			<input type="test" name="lastname" required><br>
+		<legend>Personal Information:</legend>
+		<div class='form-group'>
+			<div class='form-row'>
+				<div class='col'>
+					<input type="text" class='form-control' placeholder='First Name' name="firstname" required><br>
+				</div>
+				<div class='col'>
+					<input type="test" class='form-control' placeholder='Last Name' name="lastname" required><br>
+				</div>
+			</div>
 			*Birth date:<br>
 			<input type="date" name="birthdate" required><br>
-		</fieldset>
+		</div>
 		<fieldset>
 			<legend>Senior Center Information</legend>
 			<fieldset>
@@ -30,8 +35,9 @@
 			</fieldset>
 		</fieldset>
 		<br>
-		<input type="submit" value="Submit">
+		<input type="submit" class="btn btn-primary" value="Submit">
 	</form>
+</div>
 </main>
 
 <footer>
