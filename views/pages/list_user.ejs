@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+
+<header>
+	<% include ../partials/header.ejs %>
+</header>
+
+<main>
+<div class='container'>
+	<h2>List all users</h2>
+	<table class='table table-bordered'>
+		<thead>
+			<th>Username</th>
+		</thead>
+		<tbody>
+			<% for(var i=0; i<users.length; i++) {%>
+			<tr>
+				<td><%= users[i].username %></td>
+			</tr>
+			<% } %>
+		</tbody>
+	</table>
+</div>
+</main>
+
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>
+
+</body>
+</html>
