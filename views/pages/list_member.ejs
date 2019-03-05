@@ -10,7 +10,7 @@
 <main>
 <div class='container'>
 	<h2>List all senior center memers</h2>
-	<table class='table table-bordered'>
+	<table class='table table-bordered table-hover'>
 		<thead>
 			<th style='display:none'>ID</th>
 			<th>First Name</th>
@@ -19,15 +19,15 @@
 			<th>Activities</th>
 		</thead>
 		<tbody>
-			<% for(var i=0; i<members.length; i++) {%>
-			<tr>
-				<td style='display:none'><%= members[i]._id %></td>
-				<td><%= members[i].firstname %></td>
-				<td><%= members[i].lastname %></td>
-				<td><%= members[i].birthdate %></td>
-				<td><%= members[i].activities %></td>
+			<% members.forEach(function(member) {%>
+			<tr class='clickable-row' onclick="window.location='/members/update/<%= member._id %>';">
+				<td style='display:none'><%= member._id %></td>
+				<td><%= member.firstname %></td>
+				<td><%= member.lastname %></td>
+				<td><%= member.birthdate.toISOString().substring(0,10) %></td>
+				<td><%= member.activities %></td>
 			</tr>
-			<% } %>
+			<% }) %>
 		</tbody>
 	</table>
 </div>

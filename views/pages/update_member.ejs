@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+
+<header>
+	<%include ../partials/header.ejs %>
+</header>
+
+<main>
+<div class='container mt-3'>
+	<h1>New Senior Center Member</h1>
+	<form id='update-member-form' action='/members/update/<%=id%>' method='POST'>
+		<legend>Personal Information:</legend>
+		<div class='form-group'>
+			<% members.forEach(function(member) {%>
+			<div class='form-row'>
+				<div class='col'>
+					<input type="text" class='form-control' name="firstname" value='<%= member.firstname %>' required><br>
+				</div>
+				<div class='col'>
+					<input type="text" class='form-control' name="lastname" value='<%= member.lastname %>' required><br>
+				</div>
+			</div>
+			*Birth date:<br>
+			<input type="date" class='form-control' name="birthdate" format='yyyy-MM-dd' value='<%= member.birthdate.toISOString().substring(0,10) %>' required><br>
+		</div>
+		<fieldset>
+			<legend>Senior Center Information</legend>
+			<fieldset>
+				<legend>Activity Enrollment</legend>
+				<input type="checkbox" name="activities" value="BINGO">BINGO</option>
+				<input type="checkbox" name="activities" value="Card Games">Card Games</option>
+				<input type="checkbox" name="activities" value="Needleairs">Needleairs</option>
+				<input type="checkbox" name="activities" value="Birthday celebration">Birthday celebration</option>
+			</fieldset>
+		</fieldset>
+		<br>
+		<input type="submit" class="btn btn-primary" value="Submit">
+		<% }) %>
+	</form>
+	<br><br>
+	<form id='delete-member-form' action='/members/delete/<%=id%>' method='POST'>
+		<div class='form-row'>
+			<table class='table table-bordered'>
+				<thead>
+					<th>Description</th>
+					<th>Action</th>
+				</thead>
+				<tbody>
+					<tr class='danger'>
+						<td>Warning: permanent</td>
+						<td class='danger'><input type='submit' class='btn btn-danger' value='Delete'></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+</div>
+</main>
+
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>
+
+</body>
+
+</html>

@@ -37,3 +37,19 @@ exports.list_members = function(req, res) {
 		res.render('../views/pages/list_member.ejs', {members: result});
 	});
 };
+
+exports.member_update_page = function(req, res){
+	var findMemberQuery = Member.find({_id: req.params.id});
+	findMemberQuery.exec(function(err, docs){
+		if(err) throw err;
+		res.render('../views/pages/update_member.ejs', {members: docs, id:req.params.id});
+	});
+};
+
+exports.member_update = function(req, res){
+	Member.findByIdAndUpdate(req.params.id, {$set: req.body}, function(err, member) {
+		if(err) throw err;
+		console.log("member updated");
+		res.render('../views/pages/index.ejs');
+	});
+};
