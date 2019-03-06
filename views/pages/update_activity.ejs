@@ -13,7 +13,7 @@
 	<form id='new-activity-form' action='/activities/update/<%=id%>' method='POST'>
 		<div class='form-group'>
 			<% activities.forEach(function(activity) {%>
-				<input type='text' class='form-control' placeholder='<%= activity.name %>' name='name' required><br>
+				<input type='text' class='form-control' value='<%= activity.name %>' name='name' required><br>
 			<% }) %>
 		</div>
 		<input type='submit' class='btn btn-primary' value='Submit'>
