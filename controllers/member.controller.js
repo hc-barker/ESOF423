@@ -1,4 +1,5 @@
 const Member = require('../models/member.model');
+const Activity = require('../models/activity.model');
 
 exports.test = function(req, res) {
 	Member.find(function(err, kittens){
@@ -9,7 +10,10 @@ exports.test = function(req, res) {
 };
 
 exports.member_create_page = function(req, res) {
-	res.render('../views/pages/create_member.ejs');
+	Activity.find(function(err, result){
+		if(err) throw err;
+		res.render('../views/pages/create_member.ejs', {activities: result});
+	});
 };
 
 exports.member_create = function(req, res) {

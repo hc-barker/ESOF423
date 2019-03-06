@@ -28,22 +28,12 @@
 			<legend>Senior Center Information</legend>
 			<fieldset>
 				<legend>Activity Enrollment</legend>
-				<div class='custom-control custom-checkboxo mb-3'>
-					<input type="checkbox" class='custom-control-input' name="activities" id='bingo' value="BINGO"></option>
-					<label class='custom-control-label' for='bingo'>BINGO</label>
-				</div>
-				<div class='custom-control custom-checkboxo mb-3'>
-					<input type="checkbox" class='custom-control-input' name="activities" id='cardgames' value="Card Games"></option>
-					<label class='custom-control-label' for='cardgames'>Card Games</label>
-				</div>
-				<div class='custom-control custom-checkboxo mb-3'>
-					<input type="checkbox" class='custom-control-input' name="activities" id='needleairs' value="Needleairs"></option>
-					<label class='custom-control-label' for='needleairs'>Needleairs</label>
-				</div>
-				<div class='custom-control custom-checkboxo mb-3'>
-					<input type="checkbox" class='custom-control-input' name="activities" id='birthdaycelebration' value="Birthday Celebration"></option>
-					<label class='custom-control-label' for='birthdaycelebration'>Birthday Celebration</label>
-				</div>
+				<% activities.forEach(function(activity) {%>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='activities' id='<%=activity.name%>' value='<%=activity.name%>'</option>
+						<label class='custom-control-label' for='<%=activity.name%>'><%=activity.name%></label>
+					</div>
+				<% }) %>
 			</fieldset>
 		</fieldset>
 		<br>
