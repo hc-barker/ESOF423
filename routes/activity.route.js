@@ -9,4 +9,10 @@ router.post('/create', activity_controller.activity_create);
 
 router.get('/list', activity_controller.activity_list);
 
+router.get('/update/:id', activity_controller.activity_update_page);
+
+router.post('/update/:id', activity_controller.activity_update);
+
+router.post('/delete/:id', activity_controller.activity_delete);
+
 module.exports = router;

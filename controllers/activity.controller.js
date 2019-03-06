@@ -36,3 +36,28 @@ exports.activity_list = function(req, res) {
 		res.render('../views/pages/list_activity.ejs', {activities: result});
 	});
 };
+
+exports.activity_update_page = function(req, res){
+	var findActivityQuery = Activity.find({_id: req.params.id});
+	findActivityQuery.exec(function(err, docs) {
+		if(err) throw err;
+		res.render('../views/pages/update_activity.ejs', {activities: docs, id: req.params.id});
+	});
+};
+
+exports.activity_update = function(req, res){
+	Activity.findOneAndUpdate({_id: req.params.id}, {$set: req.body}, function(err, activity) {
+		if(err) throw err;
+		console.log("Activity updated");
+		res.render('../views/pages/index.ejs');
+	});
+};
+
+exports.activity_delete = function(req, res){
+	console.log(req.params.id);
+	Activity.findOneAndDelete({_id: req.params.id}, function(err) {
+		if(err) throw err;
+		console.log("Activity deleted");
+		res.render('../views/pages/index.ejs');
+	});
+};

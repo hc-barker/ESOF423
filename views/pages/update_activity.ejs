@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+
+<header>
+	<% include ../partials/header.ejs %>
+</header>
+
+<main>
+<div class='container mt-3'>
+	<h1>Edit Activity</h1>
+	<form id='new-activity-form' action='/activities/update/<%=id%>' method='POST'>
+		<div class='form-group'>
+			<% activities.forEach(function(activity) {%>
+				<input type='text' class='form-control' placeholder='<%= activity.name %>' name='name' required><br>
+			<% }) %>
+		</div>
+		<input type='submit' class='btn btn-primary' value='Submit'>
+	</form>
+	<form id='delete-activity-form' action='/activities/delete/<%=id%>' method='POST'>
+		<div class='form-row'>
+			<table class='table table-bordered'>
+				<thead>
+					<th>Description</th>
+					<th>Action</th>
+				</thead>
+				<tbody>
+					<tr class='danger'>
+						<td>Warning: permanent</td>
+						<td class='danger'><input type='submit' class='btn btn-danger' value='Delete'></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+</div>
+</main>
+
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>
+
+</body>
+</html>

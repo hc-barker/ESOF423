@@ -16,7 +16,7 @@
 		</thead>
 		<tbody>
 			<% activities.forEach(function(activity) {%>
-			<tr>
+			<tr class='clickable-row' onclick="window.location='/activities/update/<%= activity._id %>';">
 				<td><%= activity.name %></td>
 			</tr>
 			<% }) %>
