@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 const member = require('./routes/member.route');
 const user = require('./routes/user.route');
+const activity = require('./routes/activity.route');
 const app = express();
 
 const mongoose = require('mongoose');
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/members', member);
 app.use('/users', user);
+app.use('/activities', activity);
 
 app.set('view engine', 'ejs');
 

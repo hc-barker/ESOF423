@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+
+<header>
+	<% include ../partials/header.ejs %>
+</header>
+
+<main>
+<div class='container'>
+	<h2>List all activites</h2>
+	<table class='table table-bordered'>
+		<thead>
+			<th>Activity Name</th>
+		</thead>
+		<tbody>
+			<% activities.forEach(function(activity) {%>
+			<tr>
+				<td><%= activity.name %></td>
+			</tr>
+			<% }) %>
+		</tbody>
+	</table>
+</div>
+</main>
+
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>
+
+</body>
+</html>

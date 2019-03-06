@@ -2,7 +2,7 @@ const User = require('../models/user.model');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-exports.user_create_page = function(rerq, res){
+exports.user_create_page = function(req, res){
 	res.render('../views/pages/create_user.ejs');
 };
 
