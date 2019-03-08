@@ -36,6 +36,10 @@ app.get('/', function(req, res){
 	res.render('pages/index');
 });
 
+app.get('/test', function(req, res){
+	res.send('Welcome ' + req.seniorSession.username);
+});
+
 app.get('/about', function(req, res){
 	res.render('pages/about');
 });

@@ -11,6 +11,8 @@ router.get('/list', user_controller.list_users);
 
 router.post('/login', user_controller.login_user);
 
+router.post('/logout', user_controller.logout_user);
+
 router.get('/update/:id', user_controller.user_update_page);
 
 router.post('/update/:id', user_controller.user_update);

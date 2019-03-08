@@ -64,6 +64,11 @@ exports.login_user = function(req, res){
 	});
 };
 
+exports.logout_user = function(req, res){
+	req.seniorSession.reset();
+	res.render('../views/pages/index.ejs');
+};
+
 exports.user_update_page = function(req, res){
 	var findUserQuery = User.find({_id: req.params.id});
 	findUserQuery.exec(function(err, docs){
