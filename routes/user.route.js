@@ -11,4 +11,10 @@ router.get('/list', user_controller.list_users);
 
 router.get('/login', user_controller.login_page);
 
+router.get('/update/:id', user_controller.user_update_page);
+
+router.post('/update/:id', user_controller.user_update);
+
+//router.post('/delete/:id', user_controller.user_delete);
+
 module.exports = router;

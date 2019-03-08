@@ -52,7 +52,7 @@ exports.user_update_page = function(req, res){
 	var findUserQuery = User.find({_id: req.params.id});
 	findUserQuery.exec(function(err, docs){
 		if(err) throw err;
-		res.render('../views/pages/update_user.ejs', {user: docs, id: req.params.id});
+		res.render('../views/pages/update_user.ejs', {users: docs, id: req.params.id});
 	});
 };
 
