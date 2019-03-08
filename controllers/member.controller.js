@@ -37,8 +37,18 @@ exports.member_create = function(req, res) {
 
 exports.list_members = function(req, res) {
 	Member.find(function(err, result){
-		if(err) return console.error(err);
-		res.render('../views/pages/list_member.ejs', {members: result});
+		//result.forEach(function(res) {
+		//	Activity.find({_id : res.activities}, function(err, result){
+		//		if(err) throw err;
+		//		console.log(result);
+		//	});
+		//});
+		if(err) throw err
+		Activity.find(function(err, act){
+
+			if(err) return console.error(err);
+			res.render('../views/pages/list_member.ejs', {members: result, activities: act});
+		});
 	});
 };
 

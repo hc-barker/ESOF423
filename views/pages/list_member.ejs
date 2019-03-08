@@ -20,13 +20,19 @@
 		</thead>
 		<tbody>
 			<% members.forEach(function(member) {%>
-			<tr class='clickable-row' onclick="window.location='/members/update/<%= member._id %>';">
-				<td style='display:none'><%= member._id %></td>
-				<td><%= member.firstname %></td>
-				<td><%= member.lastname %></td>
-				<td><%= member.birthdate.toISOString().substring(0,10) %></td>
-				<td><%= member.activities %></td>
-			</tr>
+				<% var x = "" %>
+				<% activities.forEach(function(activity) {%>
+					<% if(member.activities.indexOf(activity._id) > -1) {%>
+						<% x += activity.name += ', '%>
+					<% } %>
+				<% }) %>
+				<tr class='clickable-row' onclick="window.location='/members/update/<%= member._id %>';">
+					<td style='display:none'><%= member._id %></td>
+					<td><%= member.firstname %></td>
+					<td><%= member.lastname %></td>
+					<td><%= member.birthdate.toISOString().substring(0,10) %></td>
+					<td><%= x %></td>
+				</tr>
 			<% }) %>
 		</tbody>
 	</table>
