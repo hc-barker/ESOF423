@@ -29,10 +29,20 @@
 			<legend>Senior Center Information</legend>
 			<fieldset>
 				<legend>Activity Enrollment</legend>
-				<input type="checkbox" name="activities" value="BINGO">BINGO</option>
-				<input type="checkbox" name="activities" value="Card Games">Card Games</option>
-				<input type="checkbox" name="activities" value="Needleairs">Needleairs</option>
-				<input type="checkbox" name="activities" value="Birthday celebration">Birthday celebration</option>
+				<% activities.forEach(function(activity) {%>
+					<% var x = member.activities.indexOf(activity._id) %>
+						<% if (x > -1) { %>
+						<div class='custom-control custom-checkbox mb3'>
+							<input type='checkbox' class='custom-control-input' name='activities' id='<%=activity._id%>' value='<%=activity._id%>' checked></option>
+							<label class='custom-control-label' for='<%=activity._id%>'><%=activity.name%></label>
+						</div>
+						<% } else {%>	
+						<div class='custom-control custom-checkbox mb3'>
+							<input type='checkbox' class='custom-control-input' name='activities' id='<%=activity._id%>' value='<%=activity._id%>'></option>
+							<label class='custom-control-label' for='<%=activity._id%>'><%=activity.name%></label>
+						</div>
+						<% } %>
+					<% }) %>
 			</fieldset>
 		</fieldset>
 		<br>

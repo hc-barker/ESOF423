@@ -46,7 +46,10 @@ exports.member_update_page = function(req, res){
 	var findMemberQuery = Member.find({_id: req.params.id});
 	findMemberQuery.exec(function(err, docs){
 		if(err) throw err;
-		res.render('../views/pages/update_member.ejs', {members: docs, id:req.params.id});
+		Activity.find(function(err, result){
+			if(err) throw err;
+			res.render('../views/pages/update_member.ejs', {members: docs, activities: result, id:req.params.id});
+		});
 	});
 };
 
