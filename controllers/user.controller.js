@@ -53,6 +53,7 @@ exports.login_user = function(req, res){
 				console.log(valid);
 				if(err) throw err;
 				if(valid == true){
+					req.seniorSession.username = req.body.username;
 					res.render('../views/pages/index.ejs');
 				}
 				else{

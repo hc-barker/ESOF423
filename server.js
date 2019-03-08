@@ -6,6 +6,14 @@ const user = require('./routes/user.route');
 const activity = require('./routes/activity.route');
 const app = express();
 
+const sessions = require('client-sessions');
+app.use(sessions({
+	cookieName: 'seniorSession',
+	secret: 'nbiroayirnadbeoianbe', 
+	duration: 1000 * 60,
+	activeDuration: 1000 * 5
+}));
+
 const mongoose = require('mongoose');
 //mongoose.set('useFindAndModify', false);
 //mongoose.set('useCreateIndex', true);
