@@ -47,3 +47,27 @@ exports.list_users = function(req, res) {
 exports.login_page = function(req, res){
 	res.render('../views/pages/login.ejs');
 };
+
+exports.user_update_page = function(req, res){
+	var findUserQuery = User.find({_id: req.params.id});
+	findUserQuery.exec(function(err, docs){
+		if(err) throw err;
+		res.render('../views/pages/update_user.ejs', {user: docs, id: req.params.id});
+	});
+};
+
+exports.user_update = function(req, res){
+	User.findOneAndUpdate({_id: req.params.id}, {$set: req.body}, function(err, member) {
+		if(err) throw err;
+		console.log("user updated");
+		res.render('../views/pages/index.ejs');
+	});
+};
+
+exports.member_delete = function(req, res) {
+	console.log(req.params.id);
+	User.findOneAndDelete({_id: req.params.id}, function(err) {
+		if (err) throw err;
+		console.log("user deleted");
+	});
+};
