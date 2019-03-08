@@ -20,6 +20,22 @@
 		<input type='submit' class='btn btn-primary' value='Submit'>
 		<% }) %>
 	</form>
+	<form id='delete-user-form' action='/users/delete/<%=id%>' method='POST'>
+		<div class='form-row'>
+			<table class='table table-bordered'>
+				<thead>
+					<th>Description</th>
+					<th>Action</th>
+				</thead>
+				<tbody>
+					<tr class='danger'>
+						<td>Warning: permanent</td>
+						<td class='danger'><input type='submit' class='btn btn-danger' value='Delete'></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
 </div>
 </main>
 
