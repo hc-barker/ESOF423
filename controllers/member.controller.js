@@ -37,12 +37,6 @@ exports.member_create = function(req, res) {
 
 exports.list_members = function(req, res) {
 	Member.find(function(err, result){
-		//result.forEach(function(res) {
-		//	Activity.find({_id : res.activities}, function(err, result){
-		//		if(err) throw err;
-		//		console.log(result);
-		//	});
-		//});
 		if(err) throw err
 		Activity.find(function(err, act){
 
