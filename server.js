@@ -9,7 +9,7 @@ const app = express();
 
 const sessions = require('client-sessions');
 app.use(sessions({
-	cookieName: 'seniorSession',
+	cookieName: 'session',
 	secret: 'nbiroayirnadbeoianbe', 
 	duration: 1000 * 60,
 	activeDuration: 1000 * 5

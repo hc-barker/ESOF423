@@ -12,7 +12,7 @@ exports.test = function(req, res) {
 exports.member_create_page = function(req, res) {
 	Activity.find(function(err, result){
 		if(err) throw err;
-		res.render('../views/pages/create_member.ejs', {activities: result});
+		res.render('../views/pages/create_member.ejs', {session:req.session, activities: result});
 	});
 };
 
@@ -31,7 +31,7 @@ exports.member_create = function(req, res) {
 			return next(err);
 		}
 		console.log('Member created successfully');
-		res.render('../views/pages/index.ejs');
+		res.render('../views/pages/index.ejs', {session:req.session});
 	})
 };
 
@@ -41,7 +41,7 @@ exports.list_members = function(req, res) {
 		Activity.find(function(err, act){
 
 			if(err) return console.error(err);
-			res.render('../views/pages/list_member.ejs', {members: result, activities: act});
+			res.render('../views/pages/list_member.ejs', {session:req.session, members: result, activities: act});
 		});
 	});
 };
@@ -52,7 +52,7 @@ exports.member_update_page = function(req, res){
 		if(err) throw err;
 		Activity.find(function(err, result){
 			if(err) throw err;
-			res.render('../views/pages/update_member.ejs', {members: docs, activities: result, id:req.params.id});
+			res.render('../views/pages/update_member.ejs', {session:req.session, members: docs, activities: result, id:req.params.id});
 		});
 	});
 };
@@ -61,7 +61,7 @@ exports.member_update = function(req, res){
 	Member.findOneAndUpdate({_id:req.params.id}, {$set: req.body}, function(err, member) {
 		if(err) throw err;
 		console.log("member updated");
-		res.render('../views/pages/index.ejs');
+		res.render('../views/pages/index.ejs', {session:req.session});
 	});
 };
 
@@ -70,6 +70,6 @@ exports.member_delete = function(req, res){
 	Member.findOneAndDelete({_id:req.params.id}, function(err) {	
 		if(err) throw err;
 		console.log("Member deleted");
-		res.render('../views/pages/index.ejs');
+		res.render('../views/pages/index.ejs', {session:req.session});
 	});
 };
