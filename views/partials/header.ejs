@@ -4,12 +4,27 @@
 	<ul class="nav navbar-nav">
 		<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 		<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-		<li class='nav-item'><a class='nav-link' href='/members/create'>Add a new member</a></li>
-		<li class='nav-item'><a class='nav-link' href='/members/list'>List Members</a></li>
-		<li class='nav-item'><a class='nav-link' href='/activities/create'>Add a new activity</a></li>
-		<li class='nav-item'><a class='nav-link' href='/activities/list'>List Activities</a></li>
-		<li class='nav-item'><a class='nav-link' href='/users/create'>Add a new user</a></li>
-		<li class='nav-item'><a class='nav-link' href='/users/list'>List Users</a></li>
+		<li class='nav-item dropdown'>
+			<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button'>Members</a>
+			<div class='dropdown-menu'>
+				<a class='dropdown-item' href='/members/create'>Add a new member</a>
+				<a class='dropdown-item' href='/members/list'>List members</a>
+			</div>
+		</li>
+		<li class='nav-item dropdown'>
+			<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button'>Activities</a>
+			<div class='dropdown-menu'>
+				<a class='dropdown-item' href='/activities/create'>Add a new activity</a>
+				<a class='dropdown-item' href='/activities/list'>List activities</a>
+			</div>
+		</li>
+		<li class='nav-item dropdown'>
+			<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button'>Users</a>
+			<div class='dropdown-menu'>
+				<a class='dropdown-item' href='/users/create'>Add a new user</a>
+				<a class='dropdown-item' href='/users/list'>List users</a>
+			</div>
+		</li>
 		<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#loginModal'>Login</button>
 		<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#logoutModal'>Logout</button>
 	</ul>
