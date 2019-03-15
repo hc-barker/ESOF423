@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+
+<header>
+	<%- include('../partials/header', {session: session}) %>
+</header>
+
+<main>
+<div class='container'>
+	<h2>List all users</h2>
+	<table class='table table-bordered table-hover'>
+		<thead>
+			<th>Username</th>
+		</thead>
+		<tbody>
+			<% users.forEach(function(user) {%>
+			<tr class='clickable-row' onclick="window.location='/users/update/<%= user._id %>';">
+				<td><%= user.username %></td>
+			</tr>
+			<% }) %>
+		</tbody>
+	</table>
+</div>
+</main>
+
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>
+
+</body>
+</html>

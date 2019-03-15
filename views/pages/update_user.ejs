@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+
+<header>
+	<%- include('../partials/header', {session: session}) %>
+</header>
+
+<main>
+<div class='container mt-3'>
+	<h1>Edit User</h1>
+	<form id='new-user-form' action='/users/create' method='POST'>
+		<div class='form-group'>
+			<% users.forEach(function(user) {%>
+			<input type='text' class='form-control' value='<%= user.username %>' name='username' required><br>
+			<input type='password' class='form-control' placeholder='Old Password' name='password' required><br>
+			<input type='password' class='form-control' placeholder='New Password' name='newpassword' required><br>
+		</div>
+		<input type='submit' class='btn btn-primary' value='Submit'>
+		<% }) %>
+	</form>
+	<form id='delete-user-form' action='/users/delete/<%=id%>' method='POST'>
+		<div class='form-row'>
+			<table class='table table-bordered'>
+				<thead>
+					<th>Description</th>
+					<th>Action</th>
+				</thead>
+				<tbody>
+					<tr class='danger'>
+						<td>Warning: permanent</td>
+						<td class='danger'><input type='submit' class='btn btn-danger' value='Delete'></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+</div>
+</main>
+
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>
+
+</body>
+</html>
