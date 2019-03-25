@@ -9,6 +9,8 @@ router.post('/create', activity_controller.activity_create);
 
 router.get('/list', activity_controller.activity_list);
 
+router.get('/recommend', activity_controller.activity_recommend_page);
+
 router.get('/update/:id', activity_controller.activity_update_page);
 
 router.post('/update/:id', activity_controller.activity_update);

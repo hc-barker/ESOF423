@@ -37,6 +37,10 @@ exports.activity_list = function(req, res) {
 	});
 };
 
+exports.activity_recommend_page = function(req, res) {
+	res.render('../views/pages/recommend_activity.ejs',{session:req.session});
+};
+
 exports.activity_update_page = function(req, res){
 	var findActivityQuery = Activity.find({_id: req.params.id});
 	findActivityQuery.exec(function(err, docs) {
