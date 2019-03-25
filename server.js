@@ -11,8 +11,8 @@ const sessions = require('client-sessions');
 app.use(sessions({
 	cookieName: 'session',
 	secret: 'nbiroayirnadbeoianbe', 
-	duration: 1000 * 60,
-	activeDuration: 1000 * 5
+	duration: 1000 * 60 * 5,
+	activeDuration: 1000 * 60 * 5
 }));
 
 const mongoose = require('mongoose');
