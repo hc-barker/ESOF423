@@ -18,17 +18,41 @@ exports.member_create_page = function(req, res) {
 
 exports.member_create = function(req, res) {
 	console.log(req.body);
+	var today = new Date();
+	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 	let member = new Member({
 		firstname: req.body.firstname,
+		middlename: req.body.middlename,
 		lastname: req.body.lastname,
 		birthdate: req.body.birthdate,
+		startdate: date,
+		clientID: req.body.clientID,
+		phone: req.body.phone,
+		mailingaddr: req.body.mailingaddr,
+		mailingcity: req.body.mailingcity,
+		mailingstate: req.body.mailingstate,
+		mailingzip: req.body.mailingzip,
+		physaddr: req.body.phsyaddr,
+		physcity: req.body.physcity,
+		physstate: req.body.physstate,
+		physzip: req.body.physzip,
+		race: req.body.race,
+		ethnicity: req.body.ethnicity,
+		gender: req.body.gender,
+		numinhousesold: req.body.numinhousehold,
+		caregiver: req.body.caregiver,
+		income: req.body.income,
+		disabled: req.body.disabled,
+		veteran: req.body.veteran,
+		spouseover60: req.body.spouseover60,
+		otherover60: req.body.otherover60,
 		activities: req.body.activities
 	});
 	console.log(member);
 
 	member.save(function(err) {
 		if(err){
-			return next(err);
+			throw err;
 		}
 		console.log('Member created successfully');
 		res.render('../views/pages/index.ejs', {session:req.session});

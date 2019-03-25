@@ -14,8 +14,30 @@
 		<thead>
 			<th style='display:none'>ID</th>
 			<th>First Name</th>
+			<th>Middle Name</th>
 			<th>Last Name</th>
 			<th>Birth Date</th>
+			<th>Start Date</th>
+			<th>Client ID</th>
+			<th>Phone</th>
+			<th>Mailing Address</th>
+			<th>Mailing City</th>
+			<th>Mailing State</th>
+			<th>Mailing Zip</th>
+			<th>Physical Address</th>
+			<th>Physical City</th>
+			<th>Physical State</th>
+			<th>Physical Zip</th>
+			<th>Race</th>
+			<th>Ethnicity</th>
+			<th>Gender</th>
+			<th>Num in Household</th>
+			<th>Caregiver</th>
+			<th>Income</th>
+			<th>Disabled</th>
+			<th>Veteran</th>
+			<th>Spouse Over 60</th>
+			<th>Other Over 60</th>
 			<th>Activities</th>
 		</thead>
 		<tbody>
@@ -29,8 +51,30 @@
 				<tr class='clickable-row' onclick="window.location='/members/update/<%= member._id %>';">
 					<td style='display:none'><%= member._id %></td>
 					<td><%= member.firstname %></td>
+					<td><%= member.middlename %></td>
 					<td><%= member.lastname %></td>
 					<td><%= member.birthdate.toISOString().substring(0,10) %></td>
+					<td><%= member.startdate.toISOString().substring(0,10) %></td>
+					<td><%= member.clientID %></td>
+					<td><%= member.phone %></td>
+					<td><%= member.mailingaddr %></td>
+					<td><%= member.mailingcity %></td>
+					<td><%= member.mailingstate %></td>
+					<td><%= member.mailingzip %></td>
+					<td><%= member.physaddr %></td>
+					<td><%= member.physcity %></td>
+					<td><%= member.physstate %></td>
+					<td><%= member.physzip %></td>
+					<td><%= member.race %></td>
+					<td><%= member.ethnicity %></td>
+					<td><%= member.gender %></td>
+					<td><%= member.numinhousehold %></td>
+					<td><%= member.caregiver %></td>
+					<td><%= member.income %></td>
+					<td><%= member.disabled %></td>
+					<td><%= member.veteran %></td>
+					<td><%= member.spouseover60 %></td>
+					<td><%= member.otherover60 %></td>
 					<td><%= x %></td>
 				</tr>
 			<% }) %>
