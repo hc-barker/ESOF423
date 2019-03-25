@@ -9,63 +9,270 @@
 
 <main>
 <div class='container mt-3'>
-	<h1>Edit Senior Center Member</h1>
+	<h1>New Senior Center Member</h1>
 	<form id='update-member-form' action='/members/update/<%=id%>' method='POST'>
 		<legend>Personal Information:</legend>
 		<div class='form-group'>
 			<% members.forEach(function(member) {%>
 			<div class='form-row'>
 				<div class='col'>
-					<input type="text" class='form-control' name="firstname" value='<%= member.firstname %>' required><br>
+					<input type="text" class='form-control' value='<%= member.firstname %>' name="firstname" required><br>
 				</div>
 				<div class='col'>
-					<input type="text" class='form-control' name="lastname" value='<%= member.lastname %>' required><br>
+					<input type="text" class='form-control' value='<%= member.middlename %>' name="middlename" required><br>
+				</div>
+				<div class='col'>
+					<input type="text" class='form-control' value='<%= member.lastname %>' name="lastname" required><br>
 				</div>
 			</div>
+			Client ID #:<br>
+			<input type="text" class='form-control' value='<%= member.clientID %>' name="clientID" required><br>
 			*Birth date:<br>
-			<input type="date" class='form-control' name="birthdate" format='yyyy-MM-dd' value='<%= member.birthdate.toISOString().substring(0,10) %>' required><br>
+			<input type="date" class='form-control' value='<%= member.birthdate.toISOString().substring(0,10) %>' name="birthdate" required><br>
+			Phone number:<br>
+			<input type="text" class='form-control' value='<%= member.phone %>' name="phone"><br>
+			Mailing Address:
+			<div class='form-row'>
+				<div class='col'>
+					<input type="text" class='form-control' value='<%= member.mailingaddr %>' name="mailingaddr" required><br>
+				</div>	
+				<div class='col'>
+					<input type="text" class='form-control' value='<%= member.mailingcity %>' name="mailingcity" required><br>
+				</div>
+				<div class='col'>
+					<input type="text" class='form-control' value='<%= member.mailingstate %>' name="mailingstate" required><br>
+				</div>
+				<div class='col'>
+					<input type="text" class='form-control' value='<%= member.mailingzip %>'  name="mailingzip" required><br>
+				</div>
+			</div>
+			Physical Address:
+			<div class='form-row'>
+				<div class='col'>
+					<input type="text" class='form-control' value='<%= member.physaddr %>' name="physaddr" required><br>
+				</div>	
+				<div class='col'>
+					<input type="text" class='form-control' value='<%= member.physcity %>' name="physcity" required><br>
+				</div>
+				<div class='col'>
+					<input type="text" class='form-control' value='<%= member.physstate %>' name="physstate" required><br>
+				</div>
+				<div class='col'>
+					<input type="text" class='form-control' value='<%= member.physzip %>' name="physzip" required><br>
+				</div>
+			</div>
+			<div class='form-row'>
+				<div class='col'>
+					<div class='custom-control custom-checkbox mb3'>
+						<% if(member.race.indexOf('White') > -1) {%>
+							<input type='checkbox' class='custom-control-input' name='race' id='White' value='White' checked></option>
+						<% } else { %>
+							<input type='checkbox' class='custom-control-input' name='race' id='White' value='White'></option>
+						<% } %>
+						<label class='custom-control-label' for='White'>White</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<% if(member.race.indexOf('AmericanIndianAlaskanNative') > -1) {%>
+						<input type='checkbox' class='custom-control-input' name='race' id='AmericanIndianAlaskanNative' value='AmericanIndianAlaskanNative' checked></option>
+						<%}else{%>
+						<input type='checkbox' class='custom-control-input' name='race' id='AmericanIndianAlaskanNative' value='AmericanIndianAlaskanNative'></option>
+						<%}%>
+						<label class='custom-control-label' for='AmericanIndianAlaskanNative'>American Indian/Alaskan Native</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<% if(member.race.indexOf('AsianAmerican') > -1) {%>
+						<input type='checkbox' class='custom-control-input' name='race' id='AsianAmerican' value='AsianAmerican' checked></option>
+						<%}else{%>
+						<input type='checkbox' class='custom-control-input' name='race' id='AsianAmerican' value='AsianAmerican'></option>
+						<%}%>
+						<label class='custom-control-label' for='AsianAmerican'>Asian American</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<% if(member.race.indexOf('AfricanAmerican') > -1) {%>
+						<input type='checkbox' class='custom-control-input' name='race' id='AfricanAmerican' value='AfricanAmerican' checked></option>
+						<%}else{%>
+						<input type='checkbox' class='custom-control-input' name='race' id='AfricanAmerican' value='AfricanAmerican'></option>
+						<%}%>
+						<label class='custom-control-label' for='AfricanAmerican'>African American</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<% if(member.race.indexOf('NativeHawaiianPacificIslander') > -1) {%>
+						<input type='checkbox' class='custom-control-input' name='race' id='NativeHawaiianPacificIslander' value='NativeHawaiianPacificIslander' checked></option>
+						<%}else{%>
+						<input type='checkbox' class='custom-control-input' name='race' id='NativeHawaiianPacificIslander' value='NativeHawaiianPacificIslander'></option>
+						<%}%>
+						<label class='custom-control-label' for='NativeHawaiianPacificIslander'>Native Hawaiian/Pacific Islander</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<% if(member.race.indexOf('other') > -1) {%>
+						<input type='checkbox' class='custom-control-input' name='race' id='other' value='other' checked></option>
+						<%}else{%>
+						<input type='checkbox' class='custom-control-input' name='race' id='other' value='other'></option>
+						<%}%>
+						<label class='custom-control-label' for='other'>Other</label>
+					</div>
+				</div>
+				<div class='col'>	
+					<div class='custom-control custom-checkbox mb3'>
+						<% if(member.ethnicity.indexOf('NonHispanicLatino') > -1) {%>
+						<input type='checkbox' class='custom-control-input' name='ethnicity' id='NonHispanicLatino' value='NonHispanicLatino' checked></option>
+						<%}else{%>
+						<input type='checkbox' class='custom-control-input' name='ethnicity' id='NonHispanicLatino' value='NonHispanicLatino'></option>
+						<%}%>
+						<label class='custom-control-label' for='NonHispanicLatino'>Non-Hispanic/Latino</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<% if(member.ethnicity.indexOf('HispanicLatino') > -1) {%>
+						<input type='checkbox' class='custom-control-input' name='ethnicity' id='HispanicLatino' value='HispanicLatino' checked></option>
+						<%} else {%>
+						<input type='checkbox' class='custom-control-input' name='ethnicity' id='HispanicLatino' value='HispanicLatino'></option>
+						<%}%>
+						<label class='custom-control-label' for='HispanicLatino'>Hispanic/Latino</label>
+					</div>
+				</div>
+				<div class='col'>	
+					<div class='custom-control custom-radio'>
+						<% if(member.gender.indexOf('female') > -1) {%>
+						<input type='radio' class='custom-control-input' name='gender' id='female' value='female' checked>
+						<%} else {%>
+						<input type='radio' class='custom-control-input' name='gender' id='female' value='female'>
+						<%}%>
+						<label class='custom-control-label' for='female'>Female</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<% if(member.gender.indexOf('male') > -1) {%>
+						<input type='radio' class='custom-control-input' name='gender' id='male' value='male' checked>
+						<%}else{%>
+						<input type='radio' class='custom-control-input' name='gender' id='male' value='male'>
+						<%}%>
+						<label class='custom-control-label' for='male'>Male</label>
+					</div>
+				</div>
+			</div>
+			<div class='form-row'>
+				<div class='col'>
+					<div class='custom-control custom-radio'>
+						<% if(member.income === 1) {%>
+						<input type='radio' class='custom-control-input' name='income' id='income1' value='1' checked>
+						<%} else {%>
+						<input type='radio' class='custom-control-input' name='income' id='income1' value='1'>
+						<%}%>
+						<label class='custom-control-label' for='income1'>Under $1,012</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<% if(member.income === 2) {%>
+						<input type='radio' class='custom-control-input' name='income' id='income2' value='2' checked>
+						<%} else {%>
+						<input type='radio' class='custom-control-input' name='income' id='income2' value='2'>
+						<%}%>
+						<label class='custom-control-label' for='income2'>Under $1,372</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<% if(member.income === 3){%>
+						<input type='radio' class='custom-control-input' name='income' id='income3' value='3' checked>
+						<%} else {%>
+						<input type='radio' class='custom-control-input' name='income' id='income3' value='3'>
+						<%}%>
+						<label class='custom-control-label' for='income3'>Under $1,732</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<% if(member.income === 4){%>
+						<input type='radio' class='custom-control-input' name='income' id='income4' value='4' checked>
+						<%} else {%>
+						<input type='radio' class='custom-control-input' name='income' id='income4' value='4'>
+						<%}%>
+						<label class='custom-control-label' for='income4'>Under $2,092</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<% if(member.income === 5) {%>
+						<input type='radio' class='custom-control-input' name='income' id='income5' value='5' checked>
+						<%} else {%>
+						<input type='radio' class='custom-control-input' name='income' id='income5' value='5'>
+						<%}%>
+						<label class='custom-control-label' for='income5'>Under $2,452</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<% if(member.income === 6) {%>
+						<input type='radio' class='custom-control-input' name='income' id='income6' value='6' checked>
+						<%} else {%>
+						<input type='radio' class='custom-control-input' name='income' id='income6' value='6'>
+						<%}%>
+						<label class='custom-control-label' for='income6'>Under $2,812</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<% if(member.income === 7) {%>
+						<input type='radio' class='custom-control-input' name='income' id='income7' value='7' checked>
+						<%} else {%>
+						<input type='radio' class='custom-control-input' name='income' id='income7' value='7'>
+						<%}%>
+						<label class='custom-control-label' for='income7'>Over $3,172</label>
+					</div>
+				</div>
+				<div class='form-row'>
+					<div class='col'>
+						<div class='custom-control custom-radio'>
+							<% if(member.disabled === true) {%>
+							<input type='radio' class='custom-control-input' name='disabled' id='disabledtrue' value='true' checked>
+							<%}else{%>
+							<input type='radio' class='custom-control-input' name='disabled' id='disabledtrue' value='true'>
+							<%}%>
+							<label class='custom-control-label' for='disabledtrue'>Yes</label>
+						</div>
+						<div class='custom-control custom-radio'>
+							<% if(member.disabled === false) {%>
+							<input type='radio' class='custom-control-input' name='disabled' id='disabledfalse' value='false' checked>
+							<%} else {%>
+							<input type='radio' class='custom-control-input' name='disabled' id='disabledfalse' value='false'>
+							<%}%>
+							<label class='custom-control-label' for='disabledfalse'>No</label>
+						</div>
+					</div>
+					<div class='col'>
+						<div class='custom-control custom-radio'>
+							<% if(member.veteran === true) {%>
+							<input type='radio' class='custom-control-input' name='veteran' id='veterantrue' value='true' checked>
+							<%} else {%>
+							<input type='radio' class='custom-control-input' name='veteran' id='veterantrue' value='true'>
+							<%}%>
+							<label class='custom-control-label' for='veterantrue'>Yes</label>
+						</div>
+						<div class='custom-control custom-radio'>
+							<% if(member.veteran === false) {%>
+							<input type='radio' class='custom-control-input' name='veteran' id='veteranfalse' value='false' checked>
+							<%} else{ %>
+							<input type='radio' class='custom-control-input' name='veteran' id='veteranfalse' value='false'>
+							<%}%>
+							<label class='custom-control-label' for='veteranfalse'>No</label>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<fieldset>
 			<legend>Senior Center Information</legend>
 			<fieldset>
 				<legend>Activity Enrollment</legend>
 				<% activities.forEach(function(activity) {%>
-					<% var x = member.activities.indexOf(activity._id) %>
-						<% if (x > -1) { %>
-						<div class='custom-control custom-checkbox mb3'>
-							<input type='checkbox' class='custom-control-input' name='activities' id='<%=activity._id%>' value='<%=activity._id%>' checked></option>
-							<label class='custom-control-label' for='<%=activity._id%>'><%=activity.name%></label>
-						</div>
-						<% } else {%>	
-						<div class='custom-control custom-checkbox mb3'>
-							<input type='checkbox' class='custom-control-input' name='activities' id='<%=activity._id%>' value='<%=activity._id%>'></option>
-							<label class='custom-control-label' for='<%=activity._id%>'><%=activity.name%></label>
-						</div>
-						<% } %>
-					<% }) %>
+				<% var x = member.activities.indexOf(activity._id) %>
+					<% if (x > -1) { %>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='activities' id='<%=activity._id%>' value='<%=activity._id%>' checked></option>
+						<label class='custom-control-label' for='<%=activity._id%>'><%=activity.name%></label>
+					</div>
+					<%}else{%>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='activities' id='<%=activity._id%>' value='<%=activity._id%>'></option>
+						<label class='custom-control-label' for='<%=activity._id%>'><%=activity.name%></label>
+					</div>
+					<%}%>
+				<% }) %>
 			</fieldset>
 		</fieldset>
 		<br>
 		<input type="submit" class="btn btn-primary" value="Submit">
 		<% }) %>
 	</form>
-	<br><br>
-	<form id='delete-member-form' action='/members/delete/<%=id%>' method='POST'>
-		<div class='form-row'>
-			<table class='table table-bordered'>
-				<thead>
-					<th>Description</th>
-					<th>Action</th>
-				</thead>
-				<tbody>
-					<tr class='danger'>
-						<td>Warning: permanent</td>
-						<td class='danger'><input type='submit' class='btn btn-danger' value='Delete'></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</form>
+	<br><br><br><br><br>
 </div>
 </main>
 
