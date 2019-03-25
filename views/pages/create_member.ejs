@@ -30,6 +30,7 @@
 			<input type="date" class='form-control' name="birthdate" required><br>
 			Phone number:<br>
 			<input type="text" class='form-control' name="phone"><br>
+			Mailing Address:
 			<div class='form-row'>
 				<div class='col'>
 					<input type="text" class='form-control' placeholder='Mailing Address' name="mailingaddr" required><br>
@@ -44,6 +45,7 @@
 					<input type="text" class='form-control' placeholder='ZIP' name="mailingzip" required><br>
 				</div>
 			</div>
+			Physical Address:
 			<div class='form-row'>
 				<div class='col'>
 					<input type="text" class='form-control' placeholder='Physical Address' name="physaddr" required><br>
@@ -56,6 +58,54 @@
 				</div>
 				<div class='col'>
 					<input type="text" class='form-control' placeholder='ZIP' name="physzip" required><br>
+				</div>
+			</div>
+			<div class='form-row'>
+				<div class='col'>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' value='White'></option>
+						<label class='custom-control-label' for='White'>White</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' value='AmericanIndianAlaskanNative'></option>
+						<label class='custom-control-label' for='AmericanIndianAlaskanNative'>American Indian/Alaskan Native</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' value='AsianAmerican'></option>
+						<label class='custom-control-label' for='AsianAmerican'>Asian American</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' value='AfricanAmerican'></option>
+						<label class='custom-control-label' for='AfricanAmerican'>African American</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' value='NativeHawaiianPacificIslander'></option>
+						<label class='custom-control-label' for='NativeHawaiianPacificIslander'>Native Hawaiian/Pacific Islander</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' value='other'></option>
+						<label class='custom-control-label' for='other'>Other</label>
+					</div>
+				</div>
+				<div class='col'>	
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='ethnicity' value='NonHispanicLatino'></option>
+						<label class='custom-control-label' for='NonHispanicLatino'>Non-Hispanic/Latino</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='ethnicity' value='HispanicLatino'></option>
+						<label class='custom-control-label' for='HispanicLatino'>Hispanic/Latino</label>
+					</div>
+				</div>
+				<div class='col'>	
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='gender' value='female'></option>
+						<label class='custom-control-label' for='female'>Female</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='gender' value='male'></option>
+						<label class='custom-control-label' for='male'>Male</label>
+					</div>
 				</div>
 			</div>
 		</div>
