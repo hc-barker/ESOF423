@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/hc-barker/ESOF423.svg?branch=master)](https://travis-ci.org/hc-barker/ESOF423)
+[![Coverage Status](https://coveralls.io/repos/github/hc-barker/ESOF423/badge.svg?branch=master)](https://coveralls.io/github/hc-barker/ESOF423?branch=master)
+
 # ESOF423
 Senior Center App
 

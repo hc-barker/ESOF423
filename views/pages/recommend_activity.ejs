@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+
+<header>
+	<%- include('../partials/header', {session: session}) %>
+</header>
+
+<main>
+	<div class='container'>
+		<h2>Recommended Activites</h2>
+		<table class='table table-bordered table-hover'>
+			<thead>
+				<th>Activity Name</th>
+			</thead>
+			<tbody>
+				<% activities.forEach(function(activity) {%>
+				<tr class='clickable-row' onclick="window.location='/activities/update/<%= activity._id %>';">
+					<td><%= activity.name %></td>
+				</tr>
+				<% }) %>
+			</tbody>
+		</table>
+	</div>
+</main>
+
+<footer>
+	<% include ../partials/footer.ejs %>
+</footer>
+
+</body>
+</html>

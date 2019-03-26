@@ -18,11 +18,150 @@
 					<input type="text" class='form-control' placeholder='First Name' name="firstname" required><br>
 				</div>
 				<div class='col'>
+					<input type="text" class='form-control' placeholder='Middle Name' name="middlename" required><br>
+				</div>
+				<div class='col'>
 					<input type="text" class='form-control' placeholder='Last Name' name="lastname" required><br>
 				</div>
 			</div>
+			Client ID #:<br>
+			<input type="text" class='form-control' name="clientID" required><br>
 			*Birth date:<br>
 			<input type="date" class='form-control' name="birthdate" required><br>
+			Phone number:<br>
+			<input type="text" class='form-control' name="phone"><br>
+			Mailing Address:
+			<div class='form-row'>
+				<div class='col'>
+					<input type="text" class='form-control' placeholder='Mailing Address' name="mailingaddr" required><br>
+				</div>	
+				<div class='col'>
+					<input type="text" class='form-control' placeholder='City' name="mailingcity" required><br>
+				</div>
+				<div class='col'>
+					<input type="text" class='form-control' placeholder='State' name="mailingstate" required><br>
+				</div>
+				<div class='col'>
+					<input type="text" class='form-control' placeholder='ZIP' name="mailingzip" required><br>
+				</div>
+			</div>
+			Physical Address:
+			<div class='form-row'>
+				<div class='col'>
+					<input type="text" class='form-control' placeholder='Physical Address' name="physaddr" required><br>
+				</div>	
+				<div class='col'>
+					<input type="text" class='form-control' placeholder='City' name="physcity" required><br>
+				</div>
+				<div class='col'>
+					<input type="text" class='form-control' placeholder='State' name="physstate" required><br>
+				</div>
+				<div class='col'>
+					<input type="text" class='form-control' placeholder='ZIP' name="physzip" required><br>
+				</div>
+			</div>
+			<div class='form-row'>
+				<div class='col'>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' id='White' value='White'></option>
+						<label class='custom-control-label' for='White'>White</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' id='AmericanIndianAlaskanNative' value='AmericanIndianAlaskanNative'></option>
+						<label class='custom-control-label' for='AmericanIndianAlaskanNative'>American Indian/Alaskan Native</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' id='AsianAmerican' value='AsianAmerican'></option>
+						<label class='custom-control-label' for='AsianAmerican'>Asian American</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' id='AfricanAmerican' value='AfricanAmerican'></option>
+						<label class='custom-control-label' for='AfricanAmerican'>African American</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' id='NativeHawaiianPacificIslander' value='NativeHawaiianPacificIslander'></option>
+						<label class='custom-control-label' for='NativeHawaiianPacificIslander'>Native Hawaiian/Pacific Islander</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='race' id='other' value='other'></option>
+						<label class='custom-control-label' for='other'>Other</label>
+					</div>
+				</div>
+				<div class='col'>	
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='ethnicity' id='NonHispanicLatino' value='NonHispanicLatino'></option>
+						<label class='custom-control-label' for='NonHispanicLatino'>Non-Hispanic/Latino</label>
+					</div>
+					<div class='custom-control custom-checkbox mb3'>
+						<input type='checkbox' class='custom-control-input' name='ethnicity' id='HispanicLatino' value='HispanicLatino'></option>
+						<label class='custom-control-label' for='HispanicLatino'>Hispanic/Latino</label>
+					</div>
+				</div>
+				<div class='col'>	
+					<div class='custom-control custom-radio'>
+						<input type='radio' class='custom-control-input' name='gender' id='female' value='female'>
+						<label class='custom-control-label' for='female'>Female</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<input type='radio' class='custom-control-input' name='gender' id='male' value='male'>
+						<label class='custom-control-label' for='male'>Male</label>
+					</div>
+				</div>
+			</div>
+			<div class='form-row'>
+				<div class='col'>
+					<div class='custom-control custom-radio'>
+						<input type='radio' class='custom-control-input' name='income' id='income1' value='1'>
+						<label class='custom-control-label' for='income1'>Under $1,012</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<input type='radio' class='custom-control-input' name='income' id='income2' value='2'>
+						<label class='custom-control-label' for='income2'>Under $1,372</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<input type='radio' class='custom-control-input' name='income' id='income3' value='3'>
+						<label class='custom-control-label' for='income3'>Under $1,732</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<input type='radio' class='custom-control-input' name='income' id='income4' value='4'>
+						<label class='custom-control-label' for='income4'>Under $2,092</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<input type='radio' class='custom-control-input' name='income' id='income5' value='5'>
+						<label class='custom-control-label' for='income5'>Under $2,452</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<input type='radio' class='custom-control-input' name='income' id='income6' value='6'>
+						<label class='custom-control-label' for='income6'>Under $2,812</label>
+					</div>
+					<div class='custom-control custom-radio'>
+						<input type='radio' class='custom-control-input' name='income' id='income7' value='7'>
+						<label class='custom-control-label' for='income7'>Over $3,172</label>
+					</div>
+				</div>
+				<div class='form-row'>
+					<div class='col'>
+						<div class='custom-control custom-radio'>
+							<input type='radio' class='custom-control-input' name='disabled' id='disabledtrue' value='true'>
+							<label class='custom-control-label' for='disabledtrue'>Yes</label>
+						</div>
+						<div class='custom-control custom-radio'>
+							<input type='radio' class='custom-control-input' name='disabled' id='disabledfalse' value='false'>
+							<label class='custom-control-label' for='disabledfalse'>No</label>
+						</div>
+					</div>
+					<div class='col'>
+						<div class='custom-control custom-radio'>
+							<input type='radio' class='custom-control-input' name='veteran' id='veterantrue' value='true'>
+							<label class='custom-control-label' for='veterantrue'>Yes</label>
+						</div>
+						<div class='custom-control custom-radio'>
+							<input type='radio' class='custom-control-input' name='veteran' id='veteranfalse' value='false'>
+							<label class='custom-control-label' for='veteranfalse'>No</label>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<fieldset>
 			<legend>Senior Center Information</legend>
@@ -39,6 +178,7 @@
 		<br>
 		<input type="submit" class="btn btn-primary" value="Submit">
 	</form>
+	<br><br><br><br><br>
 </div>
 </main>
 
