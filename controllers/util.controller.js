@@ -7,5 +7,6 @@ exports.about_page = function(req, res){
 };
 
 exports.test_page = function(req, res){
+	console.log(req.session);
 	res.send('welcome ' + req.session.username);
 };

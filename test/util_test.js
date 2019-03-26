@@ -3,6 +3,19 @@ const expect = chai.expect;
 const sinon = require('sinon');
 const test = require('../controllers/util.controller');
 
+const mockRequest = (sessionData) => {
+	return {
+		session: {data: sessionData },
+	};
+};
+
+const mockResponse = () => {
+	const res = {};
+	res.status = sinon.stub().returns(res);
+	res.json = sinon.stub().returns(res);
+	return res;
+};
+
 describe('Utilities', function() {
 	describe('Index page', function() {
 		it('should render a response', function() {
@@ -16,4 +29,28 @@ describe('Utilities', function() {
 			expect(res.render.calledOnce).to.equal(true);
 		});
 	});
+
+	describe('About page', function() {
+		it('should render a response', function() {
+			var req = {};
+
+			res = {
+				render: sinon.spy()
+			};
+
+			test.about_page(req, res);
+			expect(res.render.calledOnce).to.equal(true);
+		});
+	});
+
+//	describe('Test page', function() {
+//		it('should render a response', function() {
+//			var req = mockRequest({username: 'test'});
+//
+//			var res = mockResponse();
+//
+//			test.test_page(req, res);
+//			expect(res).to.equal(true);
+//		});
+//	});
 });
