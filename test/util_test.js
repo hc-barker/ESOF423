@@ -43,14 +43,4 @@ describe('Utilities', function() {
 		});
 	});
 
-//	describe('Test page', function() {
-//		it('should render a response', function() {
-//			var req = mockRequest({username: 'test'});
-//
-//			var res = mockResponse();
-//
-//			test.test_page(req, res);
-//			expect(res).to.equal(true);
-//		});
-//	});
 });
