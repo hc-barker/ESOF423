@@ -31,10 +31,17 @@ Members can register themselves with the center and add activities/meals.
 # Installation
 For the zero feature release, all that is needed is to clone the repository to a server with apache and mongodb, then use the provided html pages as the index page of your site. This will be updated as more configuration is required in future sprints. 
 
-sudo apt install mongod
+Install required dependencies
+'sudo apt install mongod nodejs-legacy'
 
-systemctl start mongod.service
+Start the database
+'systemctl start mongod.service'
 
-npm install
+Install all NPM dependencies
+'npm install'
 
-pm2 posthandler.js
+Install nodemon or other server running package
+'npm install -g nodemon'
+
+Start the server
+'nodemon'
