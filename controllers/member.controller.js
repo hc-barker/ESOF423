@@ -16,6 +16,10 @@ exports.member_create_page = function(req, res) {
 	});
 };
 
+exports.document_page = function(req, res) {
+	res.render('../views/pages/documents.ejs', {session:req.session});
+};
+
 exports.member_create = function(req, res) {
 	console.log(req.body);
 	var today = new Date();

@@ -5,6 +5,8 @@ const member_controller = require('../controllers/member.controller');
 
 router.get('/test', member_controller.test);
 
+router.get('/documents', member_controller.document_page);
+
 router.get('/create', member_controller.member_create_page);
 
 router.post('/create', member_controller.member_create);

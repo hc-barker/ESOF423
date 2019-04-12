@@ -20,13 +20,14 @@ describe('Utilities', function() {
 	describe('Index page', function() {
 		it('should render a response', function() {
 			var req = {};
-
-			res = {
-				render: sinon.spy()
-			};
+			var res = {};
+			res.render = sinon.spy();
 
 			test.index_page(req, res);
-			expect(res.render.calledOnce).to.equal(true);
+			expect(res.render.calledOnce).to.be.true;
+			//expect(res.render.calledWithExactly('index.ejs')).to.be.true;
+			//sinon.assert.calledWithExactly(res.render, '/index\.ejs/');
+			
 		});
 	});
 

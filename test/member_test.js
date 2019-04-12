@@ -11,17 +11,23 @@ const mockRequest = (sessionData, body) => ({
 describe('Members', function() {
 	describe('Member create page', function() {
 		it('renders a response with no activities', function() {
+			var server = require('../server');
+			//var spy = sinon.spy(ejs, '__express');
 			var req = mockRequest(
 					{},
 					{activities: ""}
 					);
 
-			res = {
-				render: sinon.spy()
-			};
+			res = {};
+			res.render = sinon.spy();
 
 			test.member_create_page(req, res);
-			expect(res.render.calledOnce).to.equal(true);
+			//expect(res.render.calledOnce).to.be.true;
+			expect(spy.calledWithMatch(/\/create_member\.ejs%/)).to.be.true;
+
+			//spy.restore();
+
+			done();
 		});
 	});
 });
