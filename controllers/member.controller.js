@@ -69,6 +69,7 @@ exports.list_members = function(req, res) {
 		Activity.find(function(err, act){
 
 			if(err) return console.error(err);
+			console.log(result);
 			res.render('../views/pages/list_member.ejs', {session:req.session, members: result, activities: act});
 		});
 	});
@@ -100,4 +101,8 @@ exports.member_delete = function(req, res){
 		console.log("Member deleted");
 		res.render('../views/pages/index.ejs', {session:req.session});
 	});
+};
+
+exports.member_report_page = function(req, res){
+	res.render('../views/pages/member_report.ejs', {session:req.session, members: []})
 };
