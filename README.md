@@ -47,6 +47,10 @@ Install nodemon or other server running package
 
 `npm install -g nodemon`
 
+Generate starting data
+
+`./resetUsers.sh && ./resetTestData.sh`
+
 Start the server
 
 `nodemon`
