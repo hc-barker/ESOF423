@@ -9,6 +9,8 @@ router.get('/documents', member_controller.document_page);
 
 router.get('/reports', member_controller.member_report_page);
 
+router.get('/reports/:name', member_controller.member_report);
+
 router.get('/create', member_controller.member_create_page);
 
 router.post('/create', member_controller.member_create);

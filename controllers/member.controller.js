@@ -1,5 +1,6 @@
 const Member = require('../models/member.model');
 const Activity = require('../models/activity.model');
+const Report = require('../models/report.model');
 
 exports.test = function(req, res) {
 	Member.find(function(err, kittens){
@@ -104,5 +105,32 @@ exports.member_delete = function(req, res){
 };
 
 exports.member_report_page = function(req, res){
-	res.render('../views/pages/member_report.ejs', {session:req.session, members: []})
+	Report.find(function(err, result){
+		if(err) throw err;
+
+		res.render('../views/pages/member_report.ejs', {session:req.session, members: [], reports: result})
+	});
+};
+
+exports.member_report = function(req, res){
+	Report.find(function(err, result){
+		Activity.find(function(err, activities){
+			if(err) throw err;
+			switch(req.params.name){
+				case "All Members":
+					console.log("DOOT");
+			  	Member.find(function(err, members){
+			  		if(err) throw err;
+		 				res.render('../views/pages/member_report.ejs', {session: req.session, members: members, reports: result, activities: activities});
+					});
+				case "Members With No Activities":
+					var findMemberQuery = Member.find({activities: []});
+					findMemberQuery.exec(function(err, members){
+						if(err) throw err;
+						res.render('../views/pages/member_report.ejs', {session: req.session, members: members, reports: result, activities: activities});
+					});	
+			}
+			//res.render('../views/pages/member_report.ejs', {session: req.session, members: [], reports: result});
+		});
+	});
 };
